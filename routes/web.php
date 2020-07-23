@@ -16,11 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('login');
 });
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('cartorios', 'CartoriosController');
-
 Route::post('/cartorios_xml', 'CartoriosController@xml')->name('cartorios_xml');
 Route::post('/cartorios_email/{id}', 'CartoriosController@email')->name('cartorios_email');
